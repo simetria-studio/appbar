@@ -1,0 +1,123 @@
+$radius: 12em;
+.circle {
+  position: absolute;
+  /*top: -$radius;
+  left: -$radius;*/
+  top: 0;
+  left: 0;
+  width: $radius;
+  height: $radius;
+  transition: width 0.3s, height 0.3s, transform 0.3s;
+  transform-origin: top left;
+  border-bottom-right-radius: 100%;
+  /*transition: top 0.3s, left 0.3s;
+  &:hover {
+    top: -1em;
+    left: -1em;
+  }*/
+  .link {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .link::before {
+    position: absolute;
+    display: block;
+    color: white;
+    font-family: 'FontAwesome';
+    font-size: 1.5em;
+    top: .6em;
+    right: .6em;
+  }
+}
+.wrapcircles.closed{
+  .circle {
+    transform: rotate(90deg);
+    width: $radius / 3;
+    height: $radius / 3;
+    transition-delay: 0s;
+  }
+  #click {
+    transform: none;
+    transition: all 0.3s;
+    span {
+      top: (9em / 16);
+      right: 1.5em;
+      &::after {
+        transform: rotate(90deg);
+      }
+      &::before {
+        transform: none;
+      }
+    }
+  }
+}
+#click {
+  cursor: pointer;
+}
+#click span {
+  transition: bottom 0.3s, left 0.3s;
+  display: block;
+  width: 30px;
+  height: 30px;
+  top: .8em;
+  right: 1em;
+  position: absolute;
+  &::before, &::after{
+    display: block;
+    position: absolute;
+    font-family: inherit;
+    content: '';
+    width: 30px;
+    height: 8px;
+    transition: transform 0.3s;
+    top: 11px;
+    border-radius: 3px;
+    background: white;
+  }
+  &::before {
+    transform: rotate(-45deg);
+  }
+  &::after{
+    transform: rotate(45deg);
+  }
+}
+.c-1 {
+  background: #e39b00;
+  transition-delay: 0.1s, 0.1s, 0.1s;
+  transform: rotate((90deg/5) * 1);
+  z-index: 2;
+  .link::before {
+    transform: rotate((90deg/5) * -1);
+    content: '\f4fe';
+  }
+}
+.c-2 {
+  background: #bd8100;
+  transition-delay: 0.2s, 0.2s, 0.2s;
+  transform: rotate((100deg/5) * 2);
+  z-index: 3;
+  .link::before {
+    transform: rotate((100deg/5) * -2);
+    content: '\f2f5';
+  }
+}
+.c-3 {
+  transition-delay: 0.3s,0.3s, 0.3s;
+  background: #9d6b00;
+  transform: rotate((110deg/5) * 3);
+  z-index: 4;
+  .link::before {
+    transform: rotate((110deg/5) * -3);
+    content: '\f015';
+  }
+}
+.c-5 {
+  background: #ffae00;
+  z-index: 1;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

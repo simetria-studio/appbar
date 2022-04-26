@@ -1,0 +1,1 @@
+<img width="80" src="{{ url('assets/img/logo-preta.svg') }}" alt="">

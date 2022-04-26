@@ -1,0 +1,8 @@
+CREATE USER 'celeiro'@'0.0.0.0' IDENTIFIED BY 'Powerfull1@';
+GRANT ALL PRIVILEGES ON * . * TO 'celeiro'@'0.0.0.0';
+FLUSH PRIVILEGES
+
+ chown -R www-data.www-data /var/www/html/celeiro/storage
+ chown -R www-data.www-data /var/www/html/celeiro/bootstrap/cache
+
+ certbot --nginx -d celeirodomalte.com -d www.celeirodomalte.com
