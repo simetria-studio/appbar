@@ -11,7 +11,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $dias = cal_days_in_month(CAL_GREGORIAN, date('m'), date('Y'));
+        // $dias = cal_days_in_month(CAL_GREGORIAN, date('m'), date('Y'));
         $dia_da_semana = (date('N'));
 
         $dia_atual = date('Y-m-d');
