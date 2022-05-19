@@ -20,7 +20,7 @@ class DashboardController extends Controller
         $semana_atual_final = date('Y-m-d', strtotime('+'.(6-$dia_da_semana).' Days'));
 
         $mes_atual_inicial = date('Y-m-d', strtotime(date('Y').'-'.date('m').'-01'));
-        $mes_atual_final = date('Y-m-d', strtotime(date('Y').'-'.date('m').'-'.$dias));
+        // $mes_atual_final = date('Y-m-d', strtotime(date('Y').'-'.date('m').'-'.$dias));
 
         // Vendas do dia
         $valor_dia = 0;
